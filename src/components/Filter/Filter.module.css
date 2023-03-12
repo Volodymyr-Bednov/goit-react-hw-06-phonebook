@@ -1,0 +1,26 @@
+.filterWrap {
+  width: 400px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.labelInput {
+  margin-bottom: 4px;
+}
+
+.inputForm {
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+}
+
+.inputForm:active,
+.inputForm:focus {
+  outline: none;
+  border: 2px solid #3a56f3;
+  box-shadow: 0px 0px 8px 2px rgba(94, 126, 255, 1);
+}

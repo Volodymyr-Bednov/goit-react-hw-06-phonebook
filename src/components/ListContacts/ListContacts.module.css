@@ -1,0 +1,14 @@
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.btnDel {
+  padding: 4px 15px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+  margin-left: 20px;
+}
+
+.btnDel:active {
+  background-color: #3a56f3;
+}
