@@ -9,7 +9,7 @@ export const Firter = ({ valueFilter, onFilterChahge }) => {
       <input
         className={css.inputForm}
         type="text"
-        name="fipter"
+        name="filter"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         value={valueFilter}
         onChange={onFilterChahge}

@@ -15,8 +15,8 @@ export const ListContacts = ({ dataList, onDeleteContactHandler }) => {
   );
 };
 
-ListContacts.propTypes = {
-  dataList: PropTypes.array,
+// ListContacts.propTypes = {
+//   dataList: PropTypes.array,
 
-  onDeleteContactHandler: PropTypes.func,
-};
+//   onDeleteContactHandler: PropTypes.func,
+// };
