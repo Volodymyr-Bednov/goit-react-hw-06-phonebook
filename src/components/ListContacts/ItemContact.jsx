@@ -19,9 +19,9 @@ export const ItemContact = ({
     </li>
   );
 };
-// ItemContact.propTypes = {
-//   id: PropTypes.string,
-//   name: PropTypes.string,
-//   number: PropTypes.number,
-//   onDeleteItemHandler: PropTypes.func,
-// };
+ItemContact.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  number: PropTypes.number,
+  onDeleteItemHandler: PropTypes.func,
+};
