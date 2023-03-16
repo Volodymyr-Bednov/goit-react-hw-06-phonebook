@@ -1,8 +1,33 @@
-import PropTypes from 'prop-types';
+import { nanoid } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'store/contacts/actionCreators';
+import { getContacts } from 'store/contacts/selectors';
 import css from './FormContact.module.css';
-export const FormContact = ({ onAddContactHandler }) => {
+
+export const FormContact = () => {
+  const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  const addContactHandlerr = evt => {
+    evt.preventDefault();
+    const { name, number } = evt.target.elements;
+    const nameValue = name.value;
+    const numbervalue = number.value;
+    if (!nameValue || !numbervalue) return;
+    if (contacts) {
+      const nameMatch = contacts.filter(item =>
+        item.name.toLowerCase().includes(nameValue.toLowerCase())
+      );
+
+      if (nameMatch.length) return alert(`${nameValue} is already in contacts`);
+    }
+    dispatch(
+      addContact({ id: nanoid(), name: nameValue, number: numbervalue })
+    );
+    evt.target.reset();
+  };
   return (
-    <form className={css.form} onSubmit={onAddContactHandler}>
+    <form className={css.form} onSubmit={addContactHandlerr}>
       <label className={css.labelInput} htmlFor="name">
         Name
       </label>
@@ -30,8 +55,4 @@ export const FormContact = ({ onAddContactHandler }) => {
       </button>
     </form>
   );
-};
-
-FormContact.propTypes = {
-  onAddContactHandler: PropTypes.func,
 };
